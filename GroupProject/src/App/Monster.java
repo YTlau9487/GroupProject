@@ -12,19 +12,22 @@ public class Monster {
 	int Monster_y;
 
 	public Monster() { // create Monster.(object)
-		this.Monster_x = 0;//Set the initial position X for monster
+		this.Monster_x = 1;//Set the initial position X for monster
 		this.Monster_y = 0;//Set the initial position Y for monster
+		this.Monster_point = -10;//Set the initial monster point for monster
 	}
 
 	// set positionX
-	public int update_positionX() { // u can call (object).update_positionX
-		this.Monster_x = random.nextInt(5); // set positionX to random 0 - 4
+	public int update_positionX(Map map) { // u can call (object).update_positionX
+		// set positionX to random 0 - Maximum X boundary of the grid (row -1)
+		this.Monster_x = random.nextInt(0,map.row -1); 
 		return this.Monster_x;
 	}
 
 	// set positionY
-	public int update_positionY() { // u can call (object).update_positionY
-		this.Monster_y = random.nextInt(5); // set positionY random 0 - 4
+	public int update_positionY(Map map) { // u can call (object).update_positionY
+		// set positionY random 0 - Maximum Y boundary of the grid (column -1)
+		this.Monster_y = random.nextInt(0,map.col -1); 
 		return this.Monster_y;
 	}
 
