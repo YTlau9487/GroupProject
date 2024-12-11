@@ -20,14 +20,14 @@ public class Monster {
 	// set positionX
 	public int update_positionX(Map map) { // u can call (object).update_positionX
 		// set positionX to random 0 - Maximum X boundary of the grid (row -1)
-		this.Monster_x = random.nextInt(0,map.row -1); 
+		this.Monster_x = random.nextInt(0,map.row ); 
 		return this.Monster_x;
 	}
 
 	// set positionY
 	public int update_positionY(Map map) { // u can call (object).update_positionY
 		// set positionY random 0 - Maximum Y boundary of the grid (column -1)
-		this.Monster_y = random.nextInt(0,map.col -1); 
+		this.Monster_y = random.nextInt(0,map.col ); 
 		return this.Monster_y;
 	}
 

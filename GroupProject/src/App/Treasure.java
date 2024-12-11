@@ -17,14 +17,14 @@ public class Treasure {
 	// Set position X
 	public int updatePositionX(Map map) {
 		// Set position X to random value between 0 - Maximum X boundary of the grid (row -1)
-		this.treasureX = random.nextInt(0,map.row -1); 
+		this.treasureX = random.nextInt(0,map.row); 
 		return this.treasureX;
 	}
 
 	// Set position Y
 	public int updatePositionY(Map map) {
 		// Set position Y to random value between 0 - - Maximum Y boundary of the grid (column -1)
-		this.treasureY = random.nextInt(map.col -1); 
+		this.treasureY = random.nextInt(map.col); 
 		return this.treasureY;
 	}
 
