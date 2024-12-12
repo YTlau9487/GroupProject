@@ -17,6 +17,7 @@
 
 package App;
 
+import java.awt.AWTException;
 import java.util.Scanner;
 
 public class Game {
@@ -58,8 +59,11 @@ public class Game {
 	 * and end the game - If the answer is "yes", it will continue looping the game
 	 * logic until the player's score becomes 0, at which point it will print
 	 * Message.printDeathMsg()
+	 * 
+	 * @throws InterruptedException
+	 * @throws AWTException
 	 */
-	public void play() {
+	public void play() throws AWTException, InterruptedException {
 		boolean isContinue = true; // Flag to control the main game loop
 		// Set the player's starting position at the bottom-left corner of the map
 		player.setStartPosition(map.row - 1, 0);
@@ -77,7 +81,7 @@ public class Game {
 			if (score > 0) {
 				// Get player input for movement and update the player's position
 				playerInputMovement(input); // Pass the Scanner instance
-
+				KBEvent.clean_console();
 				// Update the position of monster & treasure and the monster's points
 				generatePositions(map);
 
@@ -88,7 +92,6 @@ public class Game {
 				checkMonster();
 				// Check if player and Treasure is at the same position
 				checkTreasure();
-
 				// Create grid with the current position of the monster, treasure and player
 				String[][] grid = map.createGrid(monster1, treasure1, player, roundCount);
 
@@ -195,9 +198,12 @@ public class Game {
 	 * 
 	 * @param input A Scanner object passed from the play method to collect user
 	 *              movement input.
+	 * @throws InterruptedException
+	 * @throws AWTException
 	 */
 
-	public void playerInputMovement(Scanner input) { // Accept Scanner as a parameter
+	public void playerInputMovement(Scanner input) throws AWTException, InterruptedException { // Accept Scanner as a
+																								// parameter
 		int playerPositionX = player.getPositionX(); // Initial X position of the player from player class
 		int playerPositionY = player.getPositionY(); // Initial Y position of the player from player class
 		int mapMaxX = map.row; // Maximum X boundary of the grid (row -1)
@@ -250,7 +256,6 @@ public class Game {
 				System.out.println(ColorPlate.red + "Invalid input, please try again" + ColorPlate.resetColor);
 				continue; // Ask for input again
 			}
-			System.out.println("here A");
 			// Check if the new position is valid
 			if (playerNextX < 0 || playerNextX >= mapMaxX || playerNextY < 0 || playerNextY >= mapMaxY) {
 				System.out.println(
@@ -258,7 +263,6 @@ public class Game {
 				continue; // Ask for input again
 			} else {
 				// Update the player's position
-				System.out.println("here B");
 
 				player.move(playerNextX, playerNextY);
 
@@ -268,7 +272,6 @@ public class Game {
 				isValidMove = true; // Set the flag to true to exit the loop
 			}
 		} while (!isValidMove); // Continue until a valid move is made
-		System.out.println("here C");
 
 	}// playerInputMovement() end
 
