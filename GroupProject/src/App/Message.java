@@ -51,8 +51,8 @@ public class Message {
 	 * of the game, including Easy, Normal, and Extreme
 	 */
 	public static void displayDifficultyMenu() {
-	    String gameName = " █▀▄ ▄▀▄ ▀█▀ █▄█   ▄▀▄ █▀   █▄█ ██▀ █▀▄ ▄▀▄\r\n"
-	                    + " █▀  █▀█  █  █ █   ▀▄▀ █▀   █ █ █▄▄ █▀▄ ▀▄▀\r\n";
+	    String gameName = "\u001B[36m          █▀▄ ▄▀▄ ▀█▀ █▄█   ▄▀▄ █▀   █▄█ ██▀ █▀▄ ▄▀▄\u001B[0m\r\n"
+	                      +  			     " █▀  █▀█  █  █ █   ▀▄▀ █▀   █ █ █▄▄ █▀▄ ▀▄▀\r\n";
 
 	    
 	    String[] lines = gameName.split("\r\n"); //Split the ASCII art into array of string by \r\n
