@@ -1,3 +1,11 @@
+/* 
+ * The Player class represents a player in the game. 
+ * It creates an instance of a player with a specific position, 
+ * a player name input by the user, and the player's score, which is initialized to 100. 
+ * The class includes methods to get the player's name, get the position, update the position, 
+ * and update the score.
+ */
+
 package App;
 
 public class Player {

@@ -1,3 +1,8 @@
+/* 
+ * The Monster class represents a monster in the game. 
+ * It creates instances of monsters with specific positions and point values. 
+ * The class includes methods to update the monster's position and point value.
+ */
 package App;
 
 import java.util.Random;

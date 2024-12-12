@@ -1,3 +1,9 @@
+/* 
+ * The Treasure class represents a treasure in the game. 
+ * It creates instances of treasures with specific positions and a fixed point value of 10. 
+ * The class includes methods to update the treasure's position and to get its position and point value.
+ */
+
 package App;
 
 import java.util.Random;
