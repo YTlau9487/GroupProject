@@ -14,5 +14,6 @@ public class KBEvent {
         robot.keyRelease(KeyEvent.VK_F10);
         robot.keyPress(KeyEvent.VK_R);
         robot.keyRelease(KeyEvent.VK_R);
+        Thread.sleep(100);	// Provide an buffer for safety mechanism
 	}
 }

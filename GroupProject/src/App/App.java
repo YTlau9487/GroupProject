@@ -5,11 +5,12 @@
 
 package App;
 
+import java.awt.AWTException;
 import java.util.Scanner;
 
 public class App {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, AWTException {
 		String choice;
 		Scanner choiceScanner = new Scanner(System.in);
 		Scanner nameScanner = new Scanner(System.in);
@@ -23,6 +24,7 @@ public class App {
 
 			switch (choice) {
 			case "1":
+				KBEvent.clean_console();
 //				 Welcome message
 				Message.welcomeMessage();
 //				 ask player's name
