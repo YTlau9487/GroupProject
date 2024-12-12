@@ -23,7 +23,7 @@ public class Treasure {
 
 	// Set position Y
 	public int updatePositionY(Map map) {
-		// Set position Y to random value between 0 - - Maximum Y boundary of the grid (column -1)
+		// Set position Y to random value between 0 - Maximum Y boundary of the grid (column -1)
 		this.treasureY = random.nextInt(map.col); 
 		return this.treasureY;
 	}

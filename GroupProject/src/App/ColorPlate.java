@@ -1,3 +1,8 @@
+/*
+ * The ColorPlate class stores all the color codes and symbols 
+ * used in the game for various elements and strings, such as monsters, players, and treasures.
+ */
+
 package App;
 
 public class ColorPlate {
@@ -10,8 +15,8 @@ public class ColorPlate {
 	public final static String black = "\033[30m";
 	public final static String red = "\033[31m";
 	public final static String resetColor = "\033[0m";
-	
-
+	public final static String underline ="\u001B[4m";
+	public final static String bold = "\033[1m";
 	// Icon of the map elements (set them to be constant)
 	// For Monsters
 	public final static String monster10 = green + "\uD83D\uDC7E" + resetColor; // monsterPoint: -10
