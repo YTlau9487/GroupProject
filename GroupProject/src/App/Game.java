@@ -250,7 +250,7 @@ public class Game {
 				System.out.println(ColorPlate.red + "Invalid input, please try again" + ColorPlate.resetColor);
 				continue; // Ask for input again
 			}
-			System.out.println("here A");
+			
 			// Check if the new position is valid
 			if (playerNextX < 0 || playerNextX >= mapMaxX || playerNextY < 0 || playerNextY >= mapMaxY) {
 				System.out.println(
@@ -258,7 +258,6 @@ public class Game {
 				continue; // Ask for input again
 			} else {
 				// Update the player's position
-				System.out.println("here B");
 
 				player.move(playerNextX, playerNextY);
 
@@ -268,7 +267,7 @@ public class Game {
 				isValidMove = true; // Set the flag to true to exit the loop
 			}
 		} while (!isValidMove); // Continue until a valid move is made
-		System.out.println("here C");
+		
 
 	}// playerInputMovement() end
 
