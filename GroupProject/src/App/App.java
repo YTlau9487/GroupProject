@@ -21,11 +21,11 @@ public class App {
 
 			switch (choice) {
 			case 1:
-				// Welcome message
-//				Message.welcomeMessage();
-				// ask player's name
-//				Message.print_letter_by_letter(
-//						"\nPlease enter your character's name, and get ready to face the challenge!\n", 25);
+//				 Welcome message
+				Message.welcomeMessage();
+//				 ask player's name
+				Message.print_letter_by_letter(
+						"\nPlease enter your character's name, and get ready to face the challenge!\n", 25);
 				Thread.sleep(500);
 				Message.print_letter_by_letter("Your character's name is: ", 25);
 				Thread.sleep(500);

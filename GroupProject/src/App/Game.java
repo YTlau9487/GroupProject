@@ -214,7 +214,7 @@ public class Game {
 			// Check if the player wants to exit the game
 			if (movement.equals("E")) {
 				Message.printFarewellMsg();
-//	            System.out.println("Exiting the game. Thank you for playing!");
+	            System.out.println(ColorPlate.magenta+"Exiting the game. Thank you for playing!"+ColorPlate.resetColor);
 				System.exit(0); // Exit the program
 			}
 
