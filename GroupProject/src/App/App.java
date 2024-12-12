@@ -49,9 +49,7 @@ public class App {
 				System.out.println(
 						ColorPlate.red + "You have selected Normal Mode. This feature is still under development."
 								+ ColorPlate.resetColor);
-//				choiceScanner.close();
-//				nameScanner.close();
-//				System.exit(0);
+
 				developChoice = true;
 				break; // Exit the switch after handling choice 2
 			case "3":
@@ -59,9 +57,7 @@ public class App {
 				System.out.println(
 						ColorPlate.red + "You have selected Extreme Mode. This feature is still under development."
 								+ ColorPlate.resetColor);
-//				choiceScanner.close();
-//				nameScanner.close();
-//				System.exit(0);
+				
 				developChoice = true;
 				break; // Exit the switch after handling choice 3
 			default:
