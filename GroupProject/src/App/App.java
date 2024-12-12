@@ -10,17 +10,18 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) throws InterruptedException {
-		int choice;
-		Scanner intScanner = new Scanner(System.in);
+		String choice;
+		Scanner choiceScanner = new Scanner(System.in);
 		Scanner nameScanner = new Scanner(System.in);
+		boolean developChoice = false;
 		Message.displayDifficultyMenu();
 		do {
 			System.out.print(ColorPlate.magenta + ColorPlate.bold+"Your choice: " + ColorPlate.resetColor);
-			choice = intScanner.nextInt();
+			choice = choiceScanner.nextLine();
 			System.out.println();
 
 			switch (choice) {
-			case 1:
+			case "1":
 //				 Welcome message
 				Message.welcomeMessage();
 //				 ask player's name
@@ -39,34 +40,36 @@ public class App {
 				Game game = new Game(playerName, 3, 3);
 				game.play();
 
-				intScanner.close();
+				choiceScanner.close();
 				nameScanner.close();
 				System.exit(0);
 				break; // Exit the switch after handling choice 1
-			case 2:
+			case "2":
 
 				System.out.println(
 						ColorPlate.red + "You have selected Normal Mode. This feature is still under development."
 								+ ColorPlate.resetColor);
-				intScanner.close();
-				nameScanner.close();
-				System.exit(0);
+//				choiceScanner.close();
+//				nameScanner.close();
+//				System.exit(0);
+				developChoice = true;
 				break; // Exit the switch after handling choice 2
-			case 3:
+			case "3":
 
 				System.out.println(
 						ColorPlate.red + "You have selected Extreme Mode. This feature is still under development."
 								+ ColorPlate.resetColor);
-				intScanner.close();
-				nameScanner.close();
-				System.exit(0);
+//				choiceScanner.close();
+//				nameScanner.close();
+//				System.exit(0);
+				developChoice = true;
 				break; // Exit the switch after handling choice 3
 			default:
 				// Invalid choice message
 				System.out.println(ColorPlate.red + "Invalid choice. Please enter 1, 2, or 3." + ColorPlate.resetColor);
 				break; // Exit the switch for invalid input
 			}
-		} while (choice < 1 || choice > 3); // Continue until a valid choice is made
+		} while (choice !="1" || choice !="2" || choice !="3" || developChoice== true); // Continue until a valid choice is made
 
 	}
 }
