@@ -38,17 +38,17 @@ public class Game {
 	}
 
 	/**
-	 * The method contains the main game logic: 
-	 * 1. It will first create and display the map by calling map.createGrid() 
-	 * map.printGrid with the current positions of the monster, treasure and player 
-	 * 2. Then, it will ask the player to enter their movement by calling playerInputMovement(input) 
-	 * 3. It will call generatePositions(map) to generate the positions of the monster and treasure,
-	 * as well as the monster's score 
-	 * 4. It will call checkCollision() to ensure that the monster's and treasure's positions do not overlap 
-	 * 5. It will call CheckMonster() to check if the player is at the same position as the monster;
-	 * if so, it will deduct the related score from the player 
-	 * 6. It will call CheckTreasure() to check if the player is at the same position as the treasure;
-	 * if so, it will add the related score to the player
+	 * The method contains the main game logic: 1. It will first create and display
+	 * the map by calling map.createGrid() map.printGrid with the current positions
+	 * of the monster, treasure and player 2. Then, it will ask the player to enter
+	 * their movement by calling playerInputMovement(input) 3. It will call
+	 * generatePositions(map) to generate the positions of the monster and treasure,
+	 * as well as the monster's score 4. It will call checkCollision() to ensure
+	 * that the monster's and treasure's positions do not overlap 5. It will call
+	 * CheckMonster() to check if the player is at the same position as the monster;
+	 * if so, it will deduct the related score from the player 6. It will call
+	 * CheckTreasure() to check if the player is at the same position as the
+	 * treasure; if so, it will add the related score to the player
 	 * 
 	 * The game will loop for a maximum of maxRound times If the player's score
 	 * becomes 0 within this range, it will call Message.printLoseMsg() and end the
@@ -66,15 +66,15 @@ public class Game {
 		String askContinue; // Variable to store user input for continuing the game
 
 		Scanner input = new Scanner(System.in);
+		// Create grid with the current position of the monster, treasure and player
+		String[][] demoGrid = map.createGrid(monster1, treasure1, player, roundCount);
 
+		map.printGrid(demoGrid, roundCount, player);
+		roundCount++;
 		do {
 			int score = player.score; // Get the current score
 			// Main game logic
 			if (score > 0) {
-				// Create grid with the current position of the monster, treasure and player
-				String[][] grid = map.createGrid(monster1, treasure1, player, roundCount);
-
-				map.printGrid(grid, roundCount, player);
 				// Get player input for movement and update the player's position
 				playerInputMovement(input); // Pass the Scanner instance
 
@@ -89,11 +89,16 @@ public class Game {
 				// Check if player and Treasure is at the same position
 				checkTreasure();
 
+				// Create grid with the current position of the monster, treasure and player
+				String[][] grid = map.createGrid(monster1, treasure1, player, roundCount);
+
+				map.printGrid(grid, roundCount, player);
 				roundCount++; // Update round of the game
 			}
 
 			// Check if the maximum round has been reached
 			if (roundCount == maxRound + 1) {
+				System.out.println();
 				Message.printWinningMsg();
 				do {
 					// Ask the player if they want to continue
@@ -102,7 +107,8 @@ public class Game {
 
 					// Check user input for continuing the game
 					if (askContinue.equals("Y")) {
-						System.out.println(ColorPlate.magenta + "Great choice! Let's keep playing!" + ColorPlate.resetColor);
+						System.out.println(
+								ColorPlate.magenta + "Great choice! Let's keep playing!" + ColorPlate.resetColor);
 						break; // Exit the inner loop to continue the game
 					} else if (askContinue.equals("N")) {
 						Message.printFarewellMsg();
@@ -122,13 +128,16 @@ public class Game {
 			if (roundCount > maxRound && score <= 0) {
 				// Inform the player how many rounds they finished
 				Message.printDeathMsg();
-				System.out.printf(ColorPlate.magenta + "Congratulations! You have completed %d rounds!" + ColorPlate.resetColor, roundCount);
+				System.out.printf(
+						ColorPlate.magenta + "Congratulations! You have completed %d rounds!" + ColorPlate.resetColor,
+						roundCount);
 				isContinue = false; // Set flag to false to exit the outer loop
 				break; // Exit the game
 			} else if (roundCount <= maxRound && score <= 0) {
 				// Inform the player they lost
 				Message.printLoseMsg();
-				System.out.printf(ColorPlate.magenta + "You finished with a total of %d rounds" + ColorPlate.resetColor, roundCount);
+				System.out.printf(ColorPlate.magenta + "You finished with a total of %d rounds" + ColorPlate.resetColor,
+						roundCount);
 				isContinue = false; // Set flag to false to exit the outer loop
 				break; // Exit the game
 			}
@@ -214,7 +223,8 @@ public class Game {
 			// Check if the player wants to exit the game
 			if (movement.equals("E")) {
 				Message.printFarewellMsg();
-	            System.out.println(ColorPlate.magenta+"Exiting the game. Thank you for playing!"+ColorPlate.resetColor);
+				System.out.println(
+						ColorPlate.magenta + "Exiting the game. Thank you for playing!" + ColorPlate.resetColor);
 				System.exit(0); // Exit the program
 			}
 
