@@ -38,17 +38,17 @@ public class Game {
 	}
 
 	/**
-	 * The method contains the main game logic: 1. It will first create and display
-	 * the map by calling map.createGrid() map.printGrid with the current positions
-	 * of the monster, treasure and player 2. Then, it will ask the player to enter
-	 * their movement by calling playerInputMovement(input) 3. It will call
-	 * generatePositions(map) to generate the positions of the monster and treasure,
-	 * as well as the monster's score 4. It will call checkCollision() to ensure
-	 * that the monster's and treasure's positions do not overlap 5. It will call
-	 * CheckMonster() to check if the player is at the same position as the monster;
-	 * if so, it will deduct the related score from the player 6. It will call
-	 * CheckTreasure() to check if the player is at the same position as the
-	 * treasure; if so, it will add the related score to the player
+	 * The method contains the main game logic: 
+	 * 1. It will first create and display the map by calling map.createGrid() 
+	 * map.printGrid with the current positions of the monster, treasure and player 
+	 * 2. Then, it will ask the player to enter their movement by calling playerInputMovement(input) 
+	 * 3. It will call generatePositions(map) to generate the positions of the monster and treasure,
+	 * as well as the monster's score 
+	 * 4. It will call checkCollision() to ensure that the monster's and treasure's positions do not overlap 
+	 * 5. It will call CheckMonster() to check if the player is at the same position as the monster;
+	 * if so, it will deduct the related score from the player 
+	 * 6. It will call CheckTreasure() to check if the player is at the same position as the treasure;
+	 * if so, it will add the related score to the player
 	 * 
 	 * The game will loop for a maximum of maxRound times If the player's score
 	 * becomes 0 within this range, it will call Message.printLoseMsg() and end the
@@ -238,8 +238,9 @@ public class Game {
 
 			default:
 				System.out.println(ColorPlate.red + "Invalid input, please try again" + ColorPlate.resetColor);
+				continue; // Ask for input again
 			}
-
+			System.out.println("here A");
 			// Check if the new position is valid
 			if (playerNextX < 0 || playerNextX >= mapMaxX || playerNextY < 0 || playerNextY >= mapMaxY) {
 				System.out.println(
@@ -247,6 +248,8 @@ public class Game {
 				continue; // Ask for input again
 			} else {
 				// Update the player's position
+				System.out.println("here B");
+
 				player.move(playerNextX, playerNextY);
 
 				// For testing: printing the current X,Y of player
@@ -255,6 +258,8 @@ public class Game {
 				isValidMove = true; // Set the flag to true to exit the loop
 			}
 		} while (!isValidMove); // Continue until a valid move is made
+		System.out.println("here C");
+
 	}// playerInputMovement() end
 
 }
