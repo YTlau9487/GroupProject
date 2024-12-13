@@ -113,7 +113,7 @@ public class Map {
 
 		// Display player information (name and score)
 		System.out.printf("%22s %-30s %15s %d\n", "Player:", playerName, "Score:", playerScore);
-//        System.out.println();
+
 
 		// Print the grid
 		for (String[] row : grid) {

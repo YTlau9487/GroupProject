@@ -73,8 +73,7 @@ public class Message {
 
 	    printCentered("|3. Extreme Mode  |");
 	    printCentered("+-----------------+");
-//	   System.out.printf("%58s\n","|   2. Normal Mode  |");
-//	   System.out.printf("%59s\n","3. Extreme Mode");
+	    
 	}
 
 	/**
