@@ -101,7 +101,7 @@ public class Game {
 			}
 
 			// Check if the maximum round has been reached
-			if (roundCount == maxRound + 1) {
+			if (roundCount == maxRound + 1 && score > 0) {
 				System.out.println();
 				Message.printWinningMsg();
 				do {
